@@ -1,0 +1,936 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root{
+    --couleur-text: #192C50;
+    --couleur-boutton:rgb(185, 130, 80,0.7);
+    --bg-color:#ffffff;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    color: var(--couleur-text);
+    overflow-x: hidden;
+
+}
+a{
+    color: black;
+}
+/* le code pour la partie de mon header */
+
+header{
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 60px;
+    padding: 5px 30px;
+}
+header h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 670;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-left: 80px;
+}
+nav{
+   margin-left: 50px;
+}
+nav a{
+   margin-left: 40px;
+   text-transform: capitalize;
+   font-weight: 600;
+   padding: 0px 3px 10px 3px;
+   color: var(--couleur-text);
+}
+nav a:hover{
+    color: var(--couleur-boutton);
+    border-bottom: 2px solid var(--couleur-boutton);
+    transition: all 0.03s ease ;
+}
+/* pour le boutton de connexion*/
+.boutton-connexion{
+    box-shadow: 0px 2px 7px rgba(0, 0, 0,0.2);
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: var(--couleur-boutton);
+}
+.boutton-connexion button{
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boutton-connexion:hover{
+    transform: translateY(-3px);
+    transition: all 0.2s ease-in-out;
+}
+/* le code pour ma section d'acuille******************************************************************************************************/
+.acuille-section{
+    background: linear-gradient(to right top ,var(--bg-color) 80% , var(--couleur-boutton)100%);
+    width: 100%;
+    height: 430px;
+    padding: 40px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.accuille-titre-div{
+    padding: 0px;
+    margin-top: 20px;
+}
+.accuille-titre-div h3{
+    font-size: 13px;
+    text-transform: capitalize;
+
+}
+.accuille-titre-div h1{
+    font-size: 30px;
+    margin-top: 20px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+.accuille-titre-div p{
+    margin-top: 30px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+/* pour la barre de recherche */
+
+.accuille-barre-recherche{
+    margin-top: 50px;
+    width: 100%;
+}
+.accuille-barre-recherche form{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 10px;
+}
+.div-input-mot-cle{
+    height: 48px;
+    width:350px ;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+}
+.div-input-localiter{
+    height: 48px;
+    width:280px ;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 6px;
+}
+.div-input-contrat{
+    height: 48px;
+    width:240px ;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 6px;
+}
+.div-input-mot-cle input ,.div-input-localiter input ,.div-input-contrat input{
+   height: 100%;
+   width: 100%;
+   background:none;
+   border: none;
+   outline: none;
+   padding-left: 10px;
+}
+.div-input-localiter i , .div-input-contrat i{
+    color: var(--couleur-boutton);
+    padding: 4px;
+    border-left: 1px solid var(--couleur-text);
+}
+.div-input-mot-cle i {
+    color: var(--couleur-boutton);
+    padding: 4px;
+}
+.boutton-recherche{
+    padding: 14px 25px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    background-color: var(--couleur-boutton);
+    box-shadow: 0px 2px 7px rgba(0, 0, 0,0.2);
+}
+.boutton-recherche:hover{
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-4px);
+}
+/* pour les recherche rapide*/
+.card-recherche-rapide{
+    width: 1120px;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-left: 90px;
+    padding: 0px 20px;
+}
+.card-recherche-rapide h1{
+   margin-left: 10px;
+   text-transform: capitalize;
+   font-size: 20px;
+   font-weight: 690;
+   color: var(--couleur-boutton);
+   border-bottom: 1px solid var(--couleur-boutton);
+   padding-bottom: 7px;
+   text-align: start;
+   width: 160px;
+}
+.div-recherche-rapide{
+    margin-top: 10px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
+}
+.div-recherche-rapide a{
+    font-size: 16px;
+    color: var(--couleur-text);
+    font-weight: 500;
+}
+.div-recherche-rapide a:hover{
+    color: var(--couleur-boutton);
+}
+/* la partie du code pour les differente recherche de type radio  pour le contrat */
+.div-liste-contrat{
+    position: absolute;
+    top: 13%;
+    left: 30%;
+    width: 420px;
+    border-radius: 20px;
+    padding: 20px;box-shadow: 0px 4px 10px rgba(0, 0, 0,0.2);
+    background-color: var(--bg-color);
+    overflow: hidden;
+    display: none;
+}
+.div-liste-contrat-titre{
+   display: flex;
+   justify-content: space-between;
+
+}
+.div-liste-contrat-titre i{
+    text-align: right;
+    margin-top: -10px;
+    font-size: 23px;
+    color: var(--couleur-boutton);
+    cursor: pointer;
+}
+
+.div-liste-contrat-titre h2{
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-align:left;
+    margin-bottom: 10px;
+}
+.div-liste-contrat form {
+    margin-top: 10px;
+}
+.div-input-recherche-liste-contrat{
+    border: 1px solid var(--couleur-text);
+    width:100%;
+    border-radius: 10px;
+}
+.div-input-recherche-liste-contrat input{
+    border: none;
+    width: 100%;
+    height: 45px;
+    background: none;
+    outline: none;
+}
+.div-liste-radio{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    margin-left: 4px;
+}
+.div-radio-contrat{
+    margin-top: 15px;
+    padding: 10px 20px;
+}
+.div-radio-contrat label{
+    margin-left: 20px;
+    font-size: 19px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.div-radio-contrat input{
+    border: none;
+    background: none;
+}
+.div-boutton-liste-contrat{
+    text-align: end;
+    padding: 8px;
+}
+.div-boutton-liste-contrat button{
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid var(--couleur-text);
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.div-boutton-liste-contrat button:hover{
+    background-color: var(--couleur-boutton);
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-4px);
+}
+
+
+
+
+/* le code pour afficher les statisatique du site  '***********************************************************************/
+.statistique-site{
+    background-color: var(--couleur-boutton);
+    width: 100%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    border-radius: 10px;
+}
+
+.div-statistique{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+.div-statistique h1{
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 500;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+}
+.div-statistique p{
+    font-size: 16px;
+    line-height: 1.4;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    width: 800px;
+}
+
+.card-statistiue{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+
+}
+
+.div-state1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+.div-state1 h2{
+    font-size: 36px;
+    font-weight: 500;
+}
+.div-state1 p{
+    font-size: 16px;
+    font-weight: 450;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+/*le code pour afficher nos differente offres d'emploi*******************************************************************************/
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0,0.2);
+    border-radius: 20px;
+    margin-top: 100px;
+}
+main .div-titre-offre{
+    text-align: center;
+    padding: 20px;
+}
+main .div-titre-offre h1{
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 760;
+    text-transform: capitalize;
+}
+main .div-titre-offre p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* la section des offres affichages des offres  */
+
+.section-offres{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.div-section-offres{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 30px;
+    width: 96%;
+}
+.div-offres{
+    width: 630px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0,0.2);
+    margin-top: 10px;
+    padding: 10px 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+     transition: all 0.2s ease-in;
+
+}
+.div-offres:hover{
+    background-color: rgb(169, 169, 169 , 0.1);
+
+}
+.logo-entreprise{
+    width: 100%;
+}
+.logo-entreprise img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.div-ellement-offres{
+   width: 100%;
+
+
+}
+.div-ellement-offres h1{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-align: start;
+}
+.div-ellement-offres p{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    text-align: start;
+}
+.div-lieu-offres {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.div-lieu-offres p{
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-top: -2px;
+}
+.div-lieu-offres p i ,.div-heurePublier i{
+    color: #B98250;
+}
+
+.div-heurePublier{
+    background-color: whitesmoke;
+    width: 150px;
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+/*  boutton boutton-explorer */
+.boutton-explorer{
+    margin-top: 40px;
+    display: flex;
+    justify-content: end;
+    width: 98%;
+    margin-left: 5px;
+}
+.boutton-explorer a{
+    border-radius: 10px;
+    background-color: var(--couleur-boutton);
+
+}
+.boutton-explorer a button{
+    padding: 20px 30px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    text-transform: capitalize;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* le code pour les univerite a la une  *****************************************************************/
+
+article{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 500px;
+}
+.section-universiter{
+    width: 96%;
+    padding: 70px;
+}
+
+.section-universiter h1{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 670;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    margin-top: -60px;
+}
+.section-universiter p{
+    font-size: 16px;
+    line-height: 1.4;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    width: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+.contenaire-universiter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 45px;
+    gap: 30px;
+}
+.card-universiter{
+    width: 400px;
+    height: 270px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    transition: all 0.2s ease-in;
+    border-radius: 10px;
+}
+.card-universiter:hover{
+     background-color: rgb(169, 169, 169 , 0.1);
+}
+.div-logo-universiter{
+    width: 400px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-logo-universiter img{
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+.div-element-universiter{
+    display: flex;
+    flex-direction: column;
+}
+.div-element-universiter h1{
+    font-size: 22px;
+    font-weight: 670;
+    text-transform: uppercase;
+    color: #192C50;
+    margin-top: 3px;
+}
+.div-element-universiter span{
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-top: -10px;
+    color: #192C50;
+    margin-bottom: 15px;
+}
+.div-element-universiter span i{
+    margin-right: 10px;
+    color: var(--couleur-boutton);
+}
+.div-element-universiter a{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #192C50;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0,0.1);
+    transition: all 0.2s ;
+}
+.div-element-universiter a:hover{
+    background-color: var(--couleur-boutton);
+}
+/* le code du compte premium *****************************************************************/
+.section-premuim{
+    margin-top: 70px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 450px;
+    align-items: center;
+}
+.card-premuim{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    height: 250px;
+    padding: 100px;
+}
+.card-premuimimage{
+    width: 50%;
+    height: 400px;
+    padding: 40px;
+}
+.card-premuimimage img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.contenaire-premuim{
+    width: 50%;
+    height: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.contenaire-premuim h1{
+    width: 400px;
+    line-height: 1.7;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.contenaire-premuim p{
+    font-size: 17px;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-top: 8px;
+}
+.contenaire-premuim a{
+
+     box-shadow: 0px 0px 2px rgba(0, 0, 0,0.2);
+     width: 90%;
+     padding: 15px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 20px;
+     border-radius: 10px;
+     color: #192C50;
+     background-color:var(--couleur-boutton);
+     text-transform: capitalize;
+     font-weight: 700;
+     margin-top: 8px;
+     transition: 0.2s;
+}
+.contenaire-premuim a:hover{
+    transform: translateY(-3px);
+}
+
+/*  le debut du code pour la page des offres ****************************************************** */
+
+#acuille-section{
+    height: 200px;
+    background: linear-gradient(to right top ,var(--bg-color) 80% , var(--couleur-boutton)100%);
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  le  code pour affichage pour la page des offres  */
+.main-offres{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    max-width: 100%;
+    padding: 10px 20px;
+    margin-top: 0px;
+
+}
+.div-listeoffres{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+.section-detailleoffres{
+    padding: 8px;
+}
+
+.div-detailleoffres{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.div-description{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+}
+.div-description h1{
+
+    text-align: start;
+    padding: 10px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: capitalize;
+}
+.div-description p{
+    text-align: start;
+    margin-top: -10px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: capitalize;
+    line-height: 1.8;
+}
+#offres-div{
+    background-color: whitesmoke;
+    box-shadow: none;
+}
+#offres-div:hover{
+    background-color: none;
+}
+#div-offres{
+    background-color: #ffffff;
+}
+.div-boutton-postuler{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+#div-heurePublier{
+    background-color: whitesmoke;
+}
+.div-boutton-postuler a{
+    padding: 10px 15px;
+    margin-right: 4px;
+    border-radius: 6px;
+    background-color: var(--couleur-boutton);
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+/* le code pour la pagination */
+
+.pagination-container{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 100px;
+    align-items: center;
+}
+.div-pagination{
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    margin-right: 20px;
+
+}
+.div-pagination nav {
+    width: 100%;
+}
+.div-pagination nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+/*  le code pour la page de detaille des offres ******************************** */
+
+ .offres-select-detaille{
+     margin-top: 50px;
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+ }
+
+ /* le cote du titre  de l'offres dans la page de detaille des ofres   */
+ .cards-detaille{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+}
+ #div-offresdetaille{
+      width: 85%;
+      padding: 10px;
+      border-radius: 10px;
+
+ }
+
+ .logo-entreprise{
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+
+ }
+ .logo-entreprise img{
+    height: 100%;
+    object-fit: cover;
+    margin-top: 20px;
+    background:none;
+    border: none;
+ }
+ /*  le code de la description de L'offre dans la page de detaille des offres*/
+
+ .cards-detaille-description{
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0,0.2);
+ }
+
+ .cards-detaille-description h1{
+    font-size: 21px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+ }
+  .cards-detaille-description p{
+     width: 1000px;
+     margin-top: 24px;
+     font-size: 16px;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     line-height: 2.1;
+  }
+
+
+  .div-envoie{
+    padding:10px;
+    text-align: end;
+  }
+
+   .div-envoie a{
+      padding: 10px ;
+      background-color: var(--couleur-boutton);
+      border-radius: 2px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      margin-right: 30px;
+
+   }
+
+   .detailleoffres-titre{
+        margin-top: 60px;
+        text-align: center;
+        margin-bottom: 20px;
+   }
+     .detailleoffres-titre h1{
+        font-size: 22px;
+        font-weight: 500;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+
+     } */
+/* footer de ma page *************************************************** */
+
+
+footer {
+    background-color: yellow;
+    width: 100%;
+}
+
+.div-footer {
+    background-color: var(--couleur-text);
+    border-radius: 10px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid var(--couleur-boutton);
+}
+.lien-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-footer a i {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.div-footer i:hover {
+    color: var(--couleur-boutton);
+}
+
+.divfooter-email {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin-top: 15px;
+}
+

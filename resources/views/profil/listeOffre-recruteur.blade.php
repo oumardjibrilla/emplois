@@ -1,0 +1,42 @@
+@extends('entete.entet-offres-ajouter')
+@section('ajoue-offre')
+ <div class="div-table-recruteur">
+              <div class="div-titre-tableau"> <h2>offres en attente</h2> </div>
+              <table>
+                   <tr class="tr-titre-tableau">
+                        <th  class="auteur-th" width="200px">Auteur</th>
+                        <th width="170px">Description</th>
+                        <th width="30px">Lieu</th>
+                        <th width="20px">Status</th>
+                   </tr>
+                    @if ($offress->isEmpty())
+                        <tr>
+                            <td colspan="6">Vous n'avez aucune offre en attente.</td>
+                        </tr>
+                    @endif
+                   @foreach ($offress as $offre)
+                            <tr class="tr-element" style="height: 100px">
+                                    <td class="auteur-td">
+                                        <img src="{{ asset('storage/' . $offre->photo) }}" alt="Photo de profil" >
+                                        <div class="di-auteur-email">
+                                            <p class="p-nom">{{$offre->prenom}} {{$offre->nom}}</p>
+                                            <p class="p-email">{{$offre->email}}</p>
+                                        </div>
+                                    </td>
+                                    <td class="description-td" ><textarea name="" readonly >{{$offre->descriptionOffres}}</textarea></td>
+                                    <td>{{$offre->lieuOffre}}</td>
+                                    <td style="color: burlywood">{{$offre->status}}</td>
+                                    <td width="50px"><a href="{{route('modifOffre-recruteur' , ['id' => $offre->id])}}"><i class="fa-solid fa-pen"></i></a></td>
+                            </tr>
+                    @endforeach
+              </table>
+       </div>
+@endsection
+
+<style>
+    .liste-offres{
+        background-color: #6075BC;
+        transition: all 0.2s;
+
+    }
+</style>

@@ -1,0 +1,491 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root{
+    --couleur-text: #192C50;
+    --couleur-boutton:#B98250;
+    --bg-color:#ffffff;
+}
+body{
+    color: var(--couleur-text);
+    overflow-x: hidden;
+}
+
+/* le code pour la partie de mon header */
+
+header{
+
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 60px;
+    padding: 5px 30px;
+}
+header h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 670;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-left: 80px;
+}
+nav{
+   margin-left: 50px;
+}
+nav a{
+   margin-left: 40px;
+   text-transform: capitalize;
+   font-weight: 600;
+   padding: 0px 3px 10px 3px;
+   color: var(--couleur-text);
+}
+nav a:hover{
+    color: var(--couleur-boutton);
+    border-bottom: 2px solid var(--couleur-boutton);
+    transition: all 0.03s ease ;
+}
+/* pour le boutton de connexion*/
+.boutton-connexion{
+    box-shadow: 0px 2px 7px rgba(0, 0, 0,0.2);
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: var(--couleur-boutton);
+}
+.boutton-connexion button{
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boutton-connexion:hover{
+    transform: translateY(-3px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* le code de la partie de mon main pour le formulaire */
+main{
+    width: 100%;
+    margin-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+
+/* la partie du formulaire de connexion***********/
+.section-formulaire{
+    width: 38%;
+    border: 1px solid rgb(25, 44, 80, 0.1);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 0 auto;
+    background: linear-gradient(to right top ,var(--bg-color) 50%, rgb(185, 130, 80, 0.2) 100px);
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+/* pour la partie tire du formulaire *****************/
+.div-form-titre{
+     margin-bottom: 20px;
+}
+.div-form-titre h2{
+    font-size:25px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.div-form-titre p{
+   font-size:15px;
+   font-style: oblique;
+   margin-top: 8px;
+}
+/* le code pour le boutton de connexion google */
+.div-boutton-google{
+   background-color: var(--couleur-boutton);
+   width: 100%;
+   height: 45px;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0px 4px 10px rgba(0, 0, 0,0.1);
+   border-radius: 7px;
+   text-transform: capitalize;
+   color: var(--couleur-text);
+   letter-spacing: 1px;
+   font-size: 18px;
+   margin-top: 10px;
+}
+.div-boutton-google i{
+   margin-right: 20px;
+   font-size: 24px;
+   color: var(--bg-color);
+}
+.div-boutton-google:hover{
+    transition: all 0.2s;
+    transform: translateY(-4px);
+}
+/* la partie pour les input ****************************************/
+.div-input-form{
+  margin-top: 25px;
+}
+.div-input{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+.div-input p{
+    color: red;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.div-input label{
+   margin-left: 5px;
+   font-size: 15px;
+   margin-bottom: 8px;
+   text-transform: capitalize;
+   font-weight: 700;
+}
+.div-input input{
+   width: 100%;
+   height: 45px;
+   border: 1px solid rgb(25, 44, 80,0.2);
+   background-color: whitesmoke;
+   border-radius: 10px;
+   outline: none;
+   padding-left: 4px;
+}
+.div-input input:hover{
+    border: 1px solid rgba(0, 0, 0,0.2);
+}
+.div-pass-oublier{
+    margin-bottom:3px;
+    text-align: center;
+}
+.div-pass-oublier a{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--couleur-text);
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+.div-pass-oublier a:hover{
+    color: var(--couleur-boutton);
+}
+.div-boutton-connexion{
+    margin-top:15px;
+    background-color: var(--couleur-boutton);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0,0.1);
+}
+.div-boutton-connexion button{
+    width: 100%;
+    height: 45px;
+    text-transform: capitalize;
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: none;
+}
+.div-boutton-connexion:hover{
+   transform: translateY(-4px);
+   transition: all 0.2s;
+}
+.di-inscription{
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1.3;
+}
+.di-inscription p{
+    font-style: oblique;
+    font-size: 16px;
+}
+.di-inscription p a{
+    color: var(--couleur-boutton);
+    font-size: 18px;
+}
+/* la fin du code pour le cote formulaire */
+/*  se code ne concerne que le partie inscription c'est juste le text*/
+.div-text-inscription{
+    margin-top: 15px;
+}
+.div-text-inscription p{
+    line-height: 1.6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+}
+/********************************************************************+ fin main *******************************************************/
+
+
+/* la aprtie du code pour le fichier des information personnelle ****************************************************************/
+
+.info-perssonnelle{
+
+}
+.info-perssonnelle form{
+    margin: 0 auto;
+    width: 60%;
+    padding: 10px;
+}
+/* le titre des du formulaire des information pwersonnelle */
+.div-titre-info-personnelle{
+     text-align: start;
+}
+.div-titre-info-personnelle h2{
+    font-size: 19px;
+    text-transform: capitalize;
+    font-weight: 670;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+}
+.div-titre-info-personnelle p{
+    font-size: 16px;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+/* les input du formulaire */
+.div-form-info-personnelle{
+    margin-top: 15px;
+    padding: 10px;
+}
+.div-input-personnelle{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.div-input-personnelle label{
+    margin-bottom: 6px;
+    margin-left: 5px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.div-input-personnelle input{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    background: none;
+    border-radius: 10px;
+    border:1px solid transparent;
+    background-color: whitesmoke;
+    padding-left: 4px;
+}
+/* la partie du numero de telephone */
+.div-telephone{
+    display: flex;
+    align-items: center;
+}
+.div-telephone select{
+     width: 120px;
+     background-color: whitesmoke;
+     border: none;
+     outline: none;
+     height: 45px;
+     border-radius: 10px;
+     padding: 4px;
+}
+.div-telephone select option{
+    background-color: whitesmoke;
+    border: none;
+    cursor: pointer;
+}
+.div-telephone input{
+    margin-left: 5px;
+}
+/* la partie du boutton suivant */
+.div-boutton-info-personnelle{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.div-boutton-info-personnelle button{
+    padding: 5px 15px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    background-color: var(--couleur-boutton);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.div-boutton-info-personnelle a{
+    padding: 5px 15px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    background-color: var(--couleur-boutton);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--couleur-text);
+}
+/* le code pour le chois des roles  ********************++debut*********************************************************************/
+.choix-role{
+    width: 100%;
+}
+.choix-role form{
+    width: 70%;
+    padding: 10px;
+}
+/* la partie du titre */
+.div-role-titre{
+    text-align: center;
+    margin-top: 30px;
+}
+.div-role-titre h2{
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.div-role-titre p{
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* la partie des lien */
+.div-role-choix{
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+.div-role-choix a{
+    text-align: center;
+    width: 350px;
+    height: 200px;
+    color: var(--couleur-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0,0.4);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0,0.1);
+}.div-role-choix a:hover{
+    background-color: rgb(245, 245, 245 );
+    transition: all 0.2s;
+    transform: translateY(-2px);
+}
+.div-role-choix a i{
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: var(--couleur-boutton);
+}
+.div-role-choix a p{
+    font-size: 16px;
+    font-style: oblique;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+.div-role-choix a h2{
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/*  le code pour css pour ma page ajouter cv  */
+
+
+.ajouter-cv{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-ajouetr-cv{
+    margin: 0 auto;
+    width: 70%;
+    height: 400px;
+    padding: 10px;
+
+}
+.div-ajouetr-cv form{
+    width: 100%;
+    height: 100%;
+
+}
+.div-ajouetr-cv form h1{
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+}
+.div-inputcv{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0,0.1);
+    border-radius: 7px;
+}
+.label-cv{
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--couleur-boutton);
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.div-inputcv input{
+    width: 500px;
+    height: 200px;
+}
+
+.div-cv-boutton{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 200px;
+}
+.div-cv-boutton button{
+    padding: 10px 17px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0,0.2);
+    background-color: var(--couleur-boutton);
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
+.div-cv-boutton a{
+    color:var(--couleur-text);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+.div-cv-boutton a:hover{
+    transform: translateY(-2px);
+    color: var(--couleur-boutton);
+}

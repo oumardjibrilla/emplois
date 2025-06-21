@@ -23,10 +23,5 @@
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
-    ],
-    "hooks": {
-        "postDeploy": {
-            "exec": "php artisan migrate --force"
-        }
-    }
+    ]
 }

@@ -1,5 +1,4 @@
 @extends('entete.entete-page-inscription-connexion')
-
 @section('titre-page')
     information sur l'entreprise
 @endsection

@@ -16,24 +16,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        Role::factory()->create([
-            'nom_role' => 'Admin',
-           ]);
 
-
-        /* User::factory()->create([
-            'nom' => 'Test User',
-            'prenom' => 'Test',
-            'ville' => 'Test City',
+         User::create([
+            'nom' => 'oumar',
+            'prenom' => 'Djibrilla',
+            'ville' => 'sale',
             'adresse' => '123 Test Street',
-            'telephone' => '1234567890',
-            'email' => 'test@example.com',
-            'role_id' => 1,
-            'photo' => 'default.jpg',
-            'cv' => 'default-cv.pdf',
+            'telephone' => '0774454921',
+            'email' => 'oumardjibrilla18@gmail.com',
+            'role_id' => 3,
+            'photo' => '',
+            'cv' => '',
             'nom-entreprise' => 'Test Company',
             'taille-entreprise' => 'Small',
             'fonction-entreprise' => 'Developer',
-        ]); */
+        ]);
     }
 }

@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root{
+    --couleur-text: #192C50;
+    --couleur-boutton:#B98250;
+    --bg-color:#ffffff;
+}
+body{
+    color: var(--couleur-text);
+    overflow-x: hidden;
+    background-color: whitesmoke;
+}
+
+/* le code pour la partie de mon header */
+
+header{
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 60px;
+    padding: 5px 30px;
+}
+header h2{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 670;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-left: 100px;
+}
+nav{
+
+   margin-left: 100px;
+}
+nav a{
+   margin-left: 40px;
+   text-transform: capitalize;
+   font-weight: 600;
+   padding: 0px 3px 10px 3px;
+   color: var(--couleur-text);
+}
+nav a:hover{
+    color: var(--couleur-boutton);
+    border-bottom: 2px solid var(--couleur-boutton);
+    transition: all 0.03s ease ;
+}
+/* pour le boutton de connexion*/
+.boutton-connexion{
+    box-shadow: 0px 2px 7px rgba(0, 0, 0,0.2);
+    margin-right: 10px;
+    border-radius: 15px;
+    background-color: var(--couleur-boutton);
+}
+.boutton-connexion button{
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.boutton-connexion:hover{
+    transform: translateY(-3px);
+    transition: all 0.2s ease-in-out;
+}
+
+/* le code pour le main*********************************************************************/
+main{
+    max-width: 100%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0,0.1);
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 35px;
+    padding: 20px;
+    background-color: var(--bg-color);
+
+}
+/* le code pour la section numero 1*/
+.section-info-candidat{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-left: 18px;
+}
+.div-card-image-profil{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0,0.2);
+   border-radius: 20px;
+   padding: 5px ;
+}
+/* la partie qui concerne l'image*/
+.div-image{
+    position: relative;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-left: 7px;
+
+}
+.div-image img{
+    width: 80px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 auto;
+}
+.div-image a{
+    margin-top: 8px;
+    width: 130px;
+    color: var(--couleur-text);
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: 607;
+    padding-bottom: 3px;
+}
+.div-image a:hover{
+     color: var(--couleur-boutton);
+     transition: all 0.2s ease-in;
+}
+.div-profil-visible{
+   margin-top: 10px;
+   text-align: center;
+   margin-right: 10px;
+}
+.div-profil-visible h2{
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.div-profil-visible h3{
+    font-size: 16px;
+    font-style: oblique;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 14px;
+}
+/* les infos pour les autres infios du profil */
+.div-card-info-profil{
+    margin-top: 22px;
+    width: 82%;
+    padding: 10px;
+}
+.div-card-info-profil h3{
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight: 350;
+    border-bottom: 1px solid var(--couleur-text);
+}
+.div-card-infos{
+}
+.div-card-infos li{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.div-card-infos li h4{
+    font-size: 14px;
+    margin-left: 15px;
+    text-transform: capitalize;
+}
+.div-card-infos li i{
+    color: var(--couleur-boutton);
+    box-shadow: 0px 1px 0px var(--couleur-boutton);
+
+}
+
+/* le code pour la section des fonctionnnalite********************************/
+.section-fonctionnaliter{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+    margin-right: 8px;
+}
+/* la partie du performance*/
+.div-contenaire-performance{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0,0.1);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+.div-contenaire-performance h2{
+    font-size: 15px;
+    margin-left: 4px;
+    text-transform: capitalize;
+    font-weight: 605;
+}
+.div-contenaire-performance p{
+    margin-top: 5px;
+    font-size: 13px;
+    margin-left: 5px;
+    font-style: italic;
+}
+.div-global-performence{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    gap: 30px;
+    margin-top: 10px;
+}
+.div-global-performence .div-nbre-vue{
+    width: 150px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0,0.2);
+    border: 1px solid transparent;
+    padding: 10px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.div-global-performence .div-nbre-vue:hover{
+   border: 1px solid var(--couleur-text);
+   box-shadow:  3px 3px 3px rgba(0, 0, 0,0.2);
+}
+.div-global-performence .div-nbre-vue h3{
+    font-size: 15px;
+    color: var(--couleur-text);
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.div-global-performence .div-nbre-vue p{
+    font-size: 13px;
+    font-style: oblique;
+    color: var(--couleur-text);
+    margin-top: 10px;
+}
+/* pour les autre fonctionnaliter */
+.div-card-fonctionnaliter{
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+.div-card-fonct{
+    padding: 10px;
+    height: 150px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0,0.2);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+.div-card-fonct:hover{
+    border: 1px solid var(--couleur-text);
+   box-shadow:  3px 3px 3px rgba(0, 0, 0,0.2);
+}
+.div-card-fonct i{
+    font-size: 30px;
+    color: var(--couleur-boutton);
+    margin-top: 10px;
+}
+.div-card-fonct h2{
+    margin-top: 25px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--couleur-text);
+}
+.div-card-fonct h2 i{
+    font-size: 22px;
+    color: var(--couleur-text);
+    margin-left: 15px;
+}
+.div-card-fonct p{
+    margin-top: 10px;
+    line-height: 1.4;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--couleur-text);
+}
+#card-boster{
+    background-color: var(--couleur-boutton);
+}
+#card-boster i{
+    color: var(--couleur-text);
+}

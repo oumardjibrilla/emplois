@@ -12,7 +12,7 @@
               <table>
                    <tr class="tr-titre-tableau">
                         <th  class="auteur-th" width="220px">Auteur</th>
-                        <th width="200px">Aescription</th>
+                        <th width="200px">desscription</th>
                         <th width="20px">Nom-emtreprise</th>
                         <th width="20px">Date Expiration</th>
                    </tr>

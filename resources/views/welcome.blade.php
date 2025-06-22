@@ -233,7 +233,7 @@
 
      <script src="{{asset('frondend/js/page-principale.js')}}"></script>
        @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/page-principale.js'])
+            @vite(['resources/js/page-principale.js'])
         @endif
 </body>
 </html>

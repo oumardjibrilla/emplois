@@ -49,7 +49,7 @@
 </main>
 <script src="{{asset('frondend/js/js-recruteur.js')}}"></script>
  @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-            @vite(['resources/css/js-recruteur.js'])
+            @vite(['resources/js/js-recruteur.js'])
         @endif
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* @import 'tailwindcss'; */
+@import 'tailwindcss';
 @import "./page_principale.css";
 @import "./ajot-offre-recruteur.css";
 @import "./entete_information.css";

@@ -1,6 +1,9 @@
 @extends('entete.entete-profil-admin')
 @section('titre-page-admin') dashbord @endsection
 <link rel="stylesheet" href="{{asset('frondend/css/entete_information.css')}}" />
+ @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @endif
 @section('titre-page-header') tableau de bord @endsection
 @section('nom-prenom')  {{$info_admin->nom}} {{$info_admin->prenom}}@endsection
 @section('image-admin')<img src="{{ asset('storage/' . $info_admin->photo) }}" alt="Photo de profil" style="border-radius: 50% "  >@endsection

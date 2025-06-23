@@ -9,38 +9,35 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Mailutilisateur extends Mailable
+class candidatureMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public $nom ,$prenom;
-
-
-    public function __construct($nom , $prenom )
+    public $prenom ,$titre;
+    public function __construct($prenom , $titre)
     {
-        $this->nom = $nom;
         $this->prenom = $prenom;
+        $this->titre = $titre;
+    }
 
 
+   /*  /**
+     * Get the message envelope.
+
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Candidature Mail',
+        );
     }
 
     /**
-     * Get the message envelope.
-     */
- /*    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Mailutilisateur',
-        );
-    } */
-
-    /**
      * Get the message content definition.
-     */
-/*     public function content(): Content
+
+    public function content(): Content
     {
         return new Content(
             view: 'view.name',
@@ -57,16 +54,15 @@ class Mailutilisateur extends Mailable
         return [];
     }
 
-    public function build(){
-            return $this->from('oumardjibrilla18@gmail.com' , 'jobs')
-                        ->subject('Bienvenue !')
-                        ->view('mail.bienvenue')
-                        ->with([
-                            'nom' =>$this->nom,
-                            'prenom' =>$this->prenom
-                          ]);
+    public function build()
+    {
 
-
-
+        return $this->from('oumardjibrilla18@gmail.com' , 'jobs')
+                     ->subject('Candidature reçue – [Nom du poste]')
+                     ->view('mail.candidature-candidat')
+                     ->with([
+                        'prenom' => $this->prenom,
+                        'titre' => $this->titre,
+                    ]);
     }
 }

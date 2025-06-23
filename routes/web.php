@@ -1,12 +1,13 @@
 <?php
 
+use Dom\Attr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ConnexionController;
-use App\Http\Controllers\GestionOffreController;
 use App\Http\Controllers\IncriptionController;
-use Dom\Attr;
+use App\Http\Controllers\GestionOffreController;
 
 //les routes qui sont dans le controller homecontroller
 
@@ -65,7 +66,11 @@ route::get('/candidatures' ,[HomeController::class ,'mes_candidatures'])->name('
 // les routes qui sont dans le controller InscriptionController
 route::get('/page-inscription',[IncriptionController::class,'page_inscription'])->name('pageinscription');
 
-Route::post('/info-perso',[IncriptionController::class,'info_perso'])->name('infoperso');
+route::post('/traiter-inscription',[IncriptionController::class,'traiter_inscription'])->name('traiter-inscription');
+
+Route::get('/info-perso/{token}', [IncriptionController::class, 'showInfoPerso'])->name('infoperso.show');
+
+Route::post('/info-perso/{token}',[IncriptionController::class,'info_perso'])->name('infoperso');
 
 Route::post('/choix-role',[IncriptionController::class,'choix_role'])->name('choix-role');
 
@@ -166,3 +171,11 @@ route::get('/supprimerOffres-recruteur/{id}',[GestionOffreController::class ,'su
 route::get('/restaurerOffres-recruteur/{id}' ,[GestionOffreController::class , 'restaurerOffres_recruteur'])->name('restaurerOffres-recruteur');
 
 route::get('/supprimerdefinitif-offres/{id}' , [GestionOffreController::class , 'supprimerdefinitif_offres'])->name('supprimerdefinitif-offres');
+
+
+
+/* une route pour les veryfication*/
+/*
+Auth::routes(['verify'=>true]); */
+
+

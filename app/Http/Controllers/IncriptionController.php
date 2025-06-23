@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\Mailutilisateur;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\Mailutilisateur;
+use App\Mail\Mailverifycation;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-
 use function PHPUnit\Framework\returnSelf;
 
 class IncriptionController extends Controller
@@ -16,30 +18,49 @@ class IncriptionController extends Controller
     public function page_inscription(){
          return view('auth.page-inscription');
     }
-    public function info_perso(Request $request){
-            request()->validate([
-                'email'=>['required' , 'email'],
-                'password'=>['required', 'min:8' ,'confirmed'],
-                'password_confirmation'=>['required'],
-            ],[
-                'password.min' => 'pour des raison de securite, votre mot de passe doit faire:min catractere',
-                'password.confirmed' => 'Veuillez saisir le même mot de passe pour confirmation'
-            ]);
-         $result = User::withTrashed()
+
+    public function traiter_inscription(Request $request){
+        $request->validate([
+            'email'=>['required' , 'email'],
+            'password'=>['required', 'min:8' ,'confirmed'],
+            'password_confirmation'=>['required'],
+        ],[
+            'password.min' => 'pour des raison de securite, votre mot de passe doit faire:min catractere',
+            'password.confirmed' => 'Veuillez saisir le même mot de passe pour confirmation'
+        ]);
+        $result = User::withTrashed()
                         ->where('email', $request->input('email'))
                         ->first();
-          if($result){
-             flash('ce mail existe deja dans la base de donnes !')->error();
-             return  redirect()->back()->withInput();
-          }
+        if($result){
+            flash('Cette adresse e-mail existe déjà dans notre base de données.')->error();
+            return  redirect()->back()->withInput();
+        }
+        $token = Str::random(40);
         session(['donner'=>[
                'email' =>$request->input('email'),
                 'mot-passe' =>$request->input('password'),
+                'token' => $token,
         ]]);
 
-        return view('inscription.info-perso');
+        $verificationUrl = route('infoperso', ['token' => $token]);
+        mail::to($request->input('email'))->send(new Mailverifycation($verificationUrl));
+        flash('Un e-mail de vérification a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception pour continuer.')->success();
+        return back()->with('success', 'Un e-mail de vérification a été envoyé à votre adresse e-mail.');
     }
 
+
+    public function showInfoPerso($token){
+                $donner = session('donner');
+
+                if (!$donner || !isset($donner['token']) || $donner['token'] !== $token) {
+                    abort(404);
+                }
+
+                return view('inscription.info-perso', ['token' => $token]);
+            }
+   /*/*   public function info_perso(Request $request){
+          return  'bonjour';
+    } */
     public function choix_role(Request $request){
           $request->validate([
                  'prenom'    => ['required'],

@@ -5,7 +5,7 @@
 
 @section('section')
     <section class="section-formulaire">
-     <form action="{{route('infoperso')}}" method="post">
+     <form action="{{route('traiter-inscription')}}" method="post">
             @csrf
             <div class="div-form-titre">
                 <h2> inscription</h2>

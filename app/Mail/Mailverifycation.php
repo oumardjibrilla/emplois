@@ -9,44 +9,40 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class Mailutilisateur extends Mailable
+class Mailverifycation extends Mailable
 {
     use Queueable, SerializesModels;
 
     /**
      * Create a new message instance.
      */
-    public $nom ,$prenom;
 
-
-    public function __construct($nom , $prenom )
+    public $verificationUrl;
+    public function __construct($verificationUrl)
     {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
+        $this->verificationUrl = $verificationUrl;
+    }
 
+    /*
+     * Get the message envelope.
 
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Mailverifycation',
+        );
     }
 
     /**
-     * Get the message envelope.
-     */
- /*    public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Mailutilisateur',
-        );
-    } */
-
-    /**
      * Get the message content definition.
-     */
-/*     public function content(): Content
+
+    public function content(): Content
     {
         return new Content(
             view: 'view.name',
         );
-    } */
-
+    }
+ */
     /**
      * Get the attachments for the message.
      *
@@ -57,16 +53,14 @@ class Mailutilisateur extends Mailable
         return [];
     }
 
-    public function build(){
-            return $this->from('oumardjibrilla18@gmail.com' , 'jobs')
-                        ->subject('Bienvenue !')
-                        ->view('mail.bienvenue')
-                        ->with([
-                            'nom' =>$this->nom,
-                            'prenom' =>$this->prenom
-                          ]);
 
-
-
+    public function build()
+    {
+        return $this->from('oumardjibrilla18@gmail.com' ,'jobs')
+                    ->subject('confirmez votre e-mail')
+                    ->view('mail.verifie-mail')
+                    ->with([
+                        'verificationUrl' => $this->verificationUrl,
+                    ]);
     }
 }

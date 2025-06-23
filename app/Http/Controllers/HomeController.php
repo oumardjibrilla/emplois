@@ -6,12 +6,14 @@ use App\Models\User;
 use App\Models\Offre;
 use App\Models\Candidature;
 use Illuminate\Http\Request;
+use App\Mail\candidatureMail;
 use App\Models\user as ModelsUser;
 use Illuminate\Support\Facades\DB;
 use function Laravel\Prompts\select;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 session_start();
@@ -71,11 +73,6 @@ public function profil_Recruteur(){
            return view('auth.page-connexion');
         }
         $id = Auth::user()->id;
-        /* $offres_nombre = DB::table('users')
-                        ->leftJoin('offres' ,'offres.recruteur_id' ,'=' ,'users.id')
-                        ->leftJoin('candidatures' ,'candidatures.id_candidat','=' ,'users.id')
-                        ->select('users.nom' ,'users.prenom' ,'users.photo',
-                                DB::raw('COUNT(candidatures.id) as total_candidatures')) */
       $offre_count = DB::table('users')
                         ->leftJoin('offres', 'users.id', '=', 'offres.recruteur_id')
                         ->leftJoin('candidatures', 'candidatures.id_offre', '=', 'offres.id')
@@ -252,7 +249,7 @@ public function profil_Recruteur(){
                 ->where('users.role_id', 2)
                 ->whereNull('users.deleted_at')
                 ->orderBy('offres.created_at', 'desc')
-                ->paginate(10);
+                ->paginate(7);
         return view('page-offres', compact('offres' ,'connecte'));
     }
 
@@ -312,9 +309,9 @@ public function envoyer_candidature( int $id){
              return redirect()->route('pageconnexion');
           }
 
-        $role = Auth::user()->role_id ;
+        $role = Auth::user() ;
 
-        if($role ==  2){
+        if($role->role_id==  2){
                flash('Désolé, vous n êtes pas autorisé à postuler à une offre.')->error();
                return redirect()->route('pageconnexion');
          }
@@ -328,7 +325,8 @@ public function envoyer_candidature( int $id){
                 'id_offre'=> $id,
                 'cv'=> Auth::user()->cv,
         ]);
-
+        $offre = Offre::find($id);
+        Mail::to($role->email)->send(new candidatureMail($role->prenom  ,$offre->titreOffre ));
         flash('Votre candidature a été envoyée.')->success();
         return redirect()->route('accueil');
 
@@ -397,8 +395,8 @@ public function detaille_offres(int $id){
                     /* return dd(session()->all());;*/
                 }
 
-            $role = Auth::user()->role_id ;
-            if($role ==  2){
+            $role = Auth::user();
+            if($role->role_id  ==  2){
                 flash('Désolé, vous n êtes pas autorisé à postuler à une offre.')->error();
                 return redirect()->route('pageconnexion');
             }
@@ -412,6 +410,8 @@ public function detaille_offres(int $id){
                 'id_offre'=> $id,
                 'cv'=> Auth::user()->cv,
             ]);
+             $offre = Offre::find($id);
+            Mail::to($role->email)->send(new candidatureMail($role->prenom  ,$offre->titreOffre ));
             flash('Votre candidature a été envoyée.')->success();
             return redirect()->route('page-offres');
     }

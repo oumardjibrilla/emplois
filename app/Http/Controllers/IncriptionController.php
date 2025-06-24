@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Mail\Mailutilisateur;
-use App\Mail\Mailverifycation;
 
+
+use App\Mail\Mailverifycation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use function PHPUnit\Framework\returnSelf;
@@ -16,6 +18,7 @@ class IncriptionController extends Controller
 {
 
     public function page_inscription(){
+
          return view('auth.page-inscription');
     }
 
@@ -36,10 +39,12 @@ class IncriptionController extends Controller
             return  redirect()->back()->withInput();
         }
         $token = Str::random(40);
+        $now = now();
         session(['donner'=>[
                'email' =>$request->input('email'),
                 'mot-passe' =>$request->input('password'),
                 'token' => $token,
+                'token_created_at' => $now,
         ]]);
 
         $verificationUrl = route('infoperso', ['token' => $token]);
@@ -50,13 +55,25 @@ class IncriptionController extends Controller
 
 
     public function showInfoPerso($token){
-                $donner = session('donner');
+                     $donner = session('donner');
 
-                if (!$donner || !isset($donner['token']) || $donner['token'] !== $token) {
-                    abort(404);
-                }
+                        if (!$donner || !isset($donner['token']) || $donner['token'] !== $token) {
+                            abort(404);
+                        }
 
-                return view('inscription.info-perso', ['token' => $token]);
+                        if (!isset($donner['token_created_at'])) {
+                            return view('inscription.expire-lien');
+                        }
+
+                        // Bien appeler diffInMinutes sur la date du token et passer now() en argument
+                        $diffMinutes = $donner['token_created_at']->diffInMinutes(now());
+
+                        if ($diffMinutes > 10) {
+                            return view('inscription.expire-lien');  // lien expiré si plus de 10 minutes
+                        }
+
+                        return view('inscription.info-perso', ['token' => $token]);
+
             }
    /*/*   public function info_perso(Request $request){
           return  'bonjour';

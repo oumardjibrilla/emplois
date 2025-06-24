@@ -22,6 +22,9 @@ class IncriptionController extends Controller
          return view('auth.page-inscription');
     }
 
+    public function inscription(){
+       return view('auth.page-inscription');
+    }
     public function traiter_inscription(Request $request){
         $request->validate([
             'email'=>['required' , 'email'],
@@ -62,18 +65,19 @@ class IncriptionController extends Controller
                         }
 
                         if (!isset($donner['token_created_at'])) {
+                            session()->forget([ 'donner']);
                             return view('inscription.expire-lien');
                         }
 
                         // Bien appeler diffInMinutes sur la date du token et passer now() en argument
                         $diffMinutes = $donner['token_created_at']->diffInMinutes(now());
 
-                        if ($diffMinutes > 10) {
+                        if ($diffMinutes > 5) {
+                            session()->forget(['donner']);
                             return view('inscription.expire-lien');  // lien expiré si plus de 10 minutes
                         }
 
                         return view('inscription.info-perso', ['token' => $token]);
-
             }
    /*/*   public function info_perso(Request $request){
           return  'bonjour';

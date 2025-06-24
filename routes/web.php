@@ -88,6 +88,8 @@ route::get('/ajouter-cv', [IncriptionController::class ,'ajouter_cv'])->name('aj
 
 route::get('/page-inscription',[IncriptionController::class,'precedent_page_inscription'])->name('precedent_page_inscription');
 
+Route::get('/inscription',[IncriptionController::class,'inscription'])->name('inscription');
+
 // les routes qui sont dans le controller ConnexionController
 
 Route::get('/page-connexion',[ConnexionController::class,'page_connexion'])->name('pageconnexion');

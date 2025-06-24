@@ -73,6 +73,6 @@
 <body>
     <h1>Lien expiré</h1>
     <p>Le lien de vérification a expiré. Merci de refaire une nouvelle inscription pour recevoir un nouveau lien.</p>
-    <a href="{{ route('pageinscription') }}" aria-label="Retour à la page d'inscription">Retour à la page d'inscription</a>
+    <a href="{{route('inscription') }}" aria-label="Retour à la page d'inscription">Retour à la page d'inscription</a>
 </body>
 </html>

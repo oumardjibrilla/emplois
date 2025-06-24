@@ -19,6 +19,6 @@
   <p>Nous avons reçu votre demande d’inscription. Pour activer votre compte, cliquez sur le bouton ci-dessous :</p>
   <p><a href="{{$verificationUrl}}" class="btn">Confirmer mon adresse e-mail</a></p>
   <p>Si ce n’est pas vous, veuillez ignorer cet e-mail.</p>
-  <p>Cordialement,<br>L’équipe [Nom de l’entreprise]</p>
+  <p>Cordialement,</p>
 </body>
 </html>

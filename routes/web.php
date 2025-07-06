@@ -176,6 +176,8 @@ route::get('/supprimerdefinitif-offres/{id}' , [GestionOffreController::class , 
 
 
 
+
+
 /* une route pour les veryfication*/
 /*
 Auth::routes(['verify'=>true]); */

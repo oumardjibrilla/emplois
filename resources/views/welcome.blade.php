@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jobs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{asset('frondend/css/page_principale.css')}}">
-  @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+    <link rel="stylesheet" href="{{ asset('frondend/css/page_principale.css')}}">
+{{--
+   @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/css/page_principale.css'])
-        @endif
+        @endif --}}
 </head>
 <style>
     .flash-message{
@@ -232,8 +233,8 @@
       </footer>
 
      <script src="{{asset('frondend/js/page-principale.js')}}"></script>
-       @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
+       {{-- @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
             @vite(['resources/js/page-principale.js'])
-        @endif
+        @endif --}}
 </body>
 </html>

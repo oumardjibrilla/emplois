@@ -9,6 +9,8 @@ use App\Http\Controllers\ConnexionController;
 use App\Http\Controllers\IncriptionController;
 use App\Http\Controllers\GestionOffreController;
 
+use Illuminate\Support\Facades\Artisan;
+
 //les routes qui sont dans le controller homecontroller
 
 Route::get('/',[HomeController::class,'home'])->name('accueil');
@@ -183,3 +185,8 @@ route::get('/supprimerdefinitif-offres/{id}' , [GestionOffreController::class , 
 Auth::routes(['verify'=>true]); */
 
 
+
+Route::get('/run-seed', function () {
+    Artisan::call('db:seed');
+    return 'Seeder exécuté avec succès !';
+});

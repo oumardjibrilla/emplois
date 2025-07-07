@@ -39,10 +39,7 @@
                                 <label for="fonction">fonction*</label>
                                 <input type="text" name="fonction" id="fonction" value="{{$candidat->fonction}}" required>
                         </div>
-                         <div class="div-input">
-                                <label for="role">role*</label>
-                                <input type="text" name="role" id="role" value="{{$candidat->role_id}}" required>
-                        </div>
+
                         <div class="div-bouttonInformation">
                             <button type="reset" style="background-color: red">annuler</button>
                             <button type="submit" style="background-color: #B98250;">modifier</button>

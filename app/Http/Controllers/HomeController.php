@@ -476,7 +476,7 @@ public function detaille_offres(int $id){
            return view('auth.page-connexion');
         }
         $id = Auth::user()->id;
-        $candidat = user::select('prenom', 'nom' ,'ville'  ,'email' ,'telephone' ,'id' ,'nom-entreprise as nomentreprise' ,'fonction-entreprise as fonction')
+        $candidat = user::select('prenom', 'nom' ,'ville'  ,'email' ,'telephone' ,'id' ,'nom-entreprise as nomentreprise' ,'fonction-entreprise as fonction','role_id')
                           ->where('users.id',$id)->first();
         return view('information-recruteur.modif-info-recruteur' ,compact('candidat'));
  }
@@ -499,6 +499,7 @@ public function detaille_offres(int $id){
             $utilisateur->telephone = $request->input('telephone');
             $utilisateur['nom-entreprise'] = $request->input('nom-entreprise');
             $utilisateur['fonction-entreprise']= $request->input('fonction');
+            $utilisateur->role_id= $request->input('role');
             $utilisateur->save();
             flash("vous avez modifier vos information personnelle   !")->success();
             return redirect()->route('information-recruteur');

@@ -56,7 +56,7 @@ class offresMail extends Mailable
     public function build(){
         return $this->from('oumardjibrilla18@gmail.com')
                     ->subject('Confirmation de réception de votre offre d’emploi')
-                    ->view('Mail.envoie-offres')
+                    ->view('mail.envoie-offres')
                     ->with([
                         'prenom'=>$this->prenom,
                         'titre' =>$this->titre,

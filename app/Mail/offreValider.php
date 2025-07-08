@@ -29,7 +29,7 @@ class offreValider extends Mailable
     public function build(){
             return $this->from('oumardjibrilla18@gmail.com')
                                 ->subject('Votre offre d’emploi est en ligne')
-                                ->view('Mail.valider-offres')
+                                ->view('mail.valider-offres')
                                 ->with([
                                     'titre'=>$this->titre,
                                     'prenom'=>$this->prenom,

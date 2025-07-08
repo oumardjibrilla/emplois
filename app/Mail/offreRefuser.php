@@ -42,7 +42,7 @@ class offreRefuser extends Mailable
     public function build(){
             return $this->from('oumardjibrilla18@gmail.com')
                                 ->subject('Offre refusée')
-                                ->view('Mail.refuser-offres')
+                                ->view('mail.refuser-offres')
                                 ->with([
                                     'titre'=>$this->titre,
                                     'prenom'=>$this->prenom,
